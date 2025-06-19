@@ -1,5 +1,6 @@
 import React from "react";
 import { Logo } from "@/components/atoms";
+import { useLogin } from "@/contexts/LoginContext";
 
 function ReguBotLogo({ className = "w-20 h-20" }) {
   return (
@@ -11,6 +12,7 @@ function ReguBotLogo({ className = "w-20 h-20" }) {
 }
 
 export default function LoginContainer() {
+  const { login } = useLogin();
   return (
     <div className="flex w-full max-w-3xl min-h-[540px] rounded-2xl shadow-xl overflow-hidden bg-white mx-auto my-16">
       {/* Left: Gold background with logo and pattern */}
@@ -36,7 +38,7 @@ export default function LoginContainer() {
               <input id="password" type="password" placeholder="Insert Password" className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-yellow-700 text-black bg-white" />
             </div>
             <a href="#" className="text-xs text-yellow-900 text-center hover:underline mt-1 mb-2">Forgot Password</a>
-            <button type="submit" className="mt-1 bg-[#d4a13a] hover:bg-[#b48a1e] text-white font-bold rounded-md py-2 text-lg transition w-full">Sign In</button>
+            <button type="submit" className="mt-1 bg-[#d4a13a] hover:bg-[#b48a1e] text-white font-bold rounded-md py-2 text-lg transition w-full" onClick={login}>Sign In</button>
           </form>
         </div>
       </div>
