@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "npm run dev:prep && next dev",
+    "dev:prep": "mv -f babel.config.js babel.config.js.bak 2>/dev/null || true",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
+    "test": "npm run test:prep && jest",
+    "test:prep": "mv -f babel.config.js.bak babel.config.js 2>/dev/null || true",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
