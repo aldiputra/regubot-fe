@@ -8,7 +8,9 @@ import AdminContainer from "@/components/AdminContainer";
 import ChatbotContainer from "@/components/ChatbotContainer";
 
 export default function Home() {
-  const [activeContainer, setActiveContainer] = useState<"admin" | "chatbot">("admin");
+  const [activeContainer, setActiveContainer] = useState<"admin" | "chatbot">(
+    "admin"
+  );
   const { isAuth } = useLogin();
 
   if (!isAuth) {
